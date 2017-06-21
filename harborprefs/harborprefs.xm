@@ -106,6 +106,14 @@ NSArray* SpecifiersFromPlist (
   }
 }
 
+- (void)followjake:(id)arg1{
+  if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]]){
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=Jakeashacks"]];
+  }else{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.twitter.com/Jakeashacks"]];
+  }
+}
+
 @end
 
 %hook HPListController
