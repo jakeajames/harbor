@@ -2,7 +2,7 @@
 
 ![Icon](https://raw.githubusercontent.com/eswick/harbor/master/readme_resources/icon.png "Harbor")
 
-Harbor is a iOS 11 style dock for iPads
+This is Harbor, modified to be an iOS 11 style dock for iPads
 
 Compile with [theos](https://github.com/dhowett/theos). I've tried to make it as easy as possible. After installing theos *properly*, `make package install` should be all you need to run!
 
