@@ -39,7 +39,7 @@ NSArray* SpecifiersFromPlist (
 	if (_specifiers == nil) {
 
 		NSDictionary *plist = @{
-      @"title" : @"Harbor",
+      @"title" : @"Harbor (iOS 11 like dock)",
 			@"items" : @[
 
 				#define GROUP(TITLE, FOOTER, ...) @{ \
