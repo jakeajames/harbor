@@ -873,7 +873,7 @@ static UILabel *indicatorLabel;
 
 	}
 
-	MSHookIvar<UIView*>(self, "_backgroundView").layer.cornerRadius = 5.0;
+	MSHookIvar<UIView*>(self, "_backgroundView").layer.cornerRadius = 20; //add more cornerRadius
 	MSHookIvar<UIView*>(self, "_backgroundView").frame = frame;
 
 }
