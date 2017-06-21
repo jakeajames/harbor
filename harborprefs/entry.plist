@@ -5,6 +5,6 @@
 		detail = HPListController;
 		icon = "harborprefs.png";
 		isController = 1;
-		label = Harbor;
+		label = "Harbor (iOS 11 like)";
 	};
 }
