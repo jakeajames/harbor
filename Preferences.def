@@ -72,6 +72,8 @@ GROUP("", "Follow for info on updates, deals, and new projects.", )
 
 RAW_ENTRY(PSButtonCell, @"action" : @"follow:", @"icon" : @"twitter.png", @"label" : @"@e_swick on Twitter", )
 
+RAW_ENTRY(PSButtonCell, @"action" : @"followjake:", @"icon" : @"twitter.png", @"label" : @"@Jakeashacks on Twitter", )
+
 GROUP("Copyright \u00A9 2015 Evan Swick. All rights reserved.", "", )
 
 #undef PREF
