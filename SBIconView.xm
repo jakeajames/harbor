@@ -298,53 +298,7 @@
 
 #define super(...) ({ struct objc_super superInfo = { self, %c(UIView) }; ((void(*)(struct objc_super*,SEL,id,id))objc_msgSendSuper)(&superInfo, _cmd, __VA_ARGS__); })
 
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2{
-	if (![[prefs getenabled] boolValue]) {
-		%orig(arg1, arg2);
-		return;
-	}
-
-	if ([self isInDock] && !self.isGrabbed)
-		super(arg1, arg2);
-	else
-		%orig(arg1, arg2);
-}
-
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2{
-	if (![[prefs getenabled] boolValue]) {
-		%orig(arg1, arg2);
-		return;
-	}
-
-	if ([self isInDock] && !self.isGrabbed)
-		super(arg1, arg2);
-	else
-		%orig(arg1, arg2);
-}
-
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2{
-	if (![[prefs getenabled] boolValue]) {
-		%orig(arg1, arg2);
-		return;
-	}
-
-	if ([self isInDock] && !self.isGrabbed)
-		super(arg1, arg2);
-	else
-		%orig(arg1, arg2);
-}
-
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2{
-	if (![[prefs getenabled] boolValue]) {
-		%orig(arg1, arg2);
-		return;
-	}
-
-	if ([self isInDock] && !self.isGrabbed)
-		super(arg1, arg2);
-	else
-		%orig(arg1, arg2);
-}
+//REMOVED TOUCH STUFF
 
 %end
 
