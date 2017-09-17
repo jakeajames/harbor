@@ -854,26 +854,27 @@ static UILabel *indicatorLabel;
 	}
 
 	CGFloat backgroundMargin = 25.0;
+	CGFloat backgroundMargin_ = 35.0;
 
 	CGRect frame = CGRectZero;
 
 	if (!in_landscape) {
 
-		frame.size.width = (CGRectGetMaxX(lastIcon.frame) - CGRectGetMinX(firstIcon.frame)) + backgroundMargin;
+		frame.size.width = (CGRectGetMaxX(lastIcon.frame) - CGRectGetMinX(firstIcon.frame)) + backgroundMargin_;
 		frame.size.height = [_iconListView collapsedIconWidth] + backgroundMargin;
-		frame.origin.x = CGRectGetMinX(firstIcon.frame) - backgroundMargin / 2;
+		frame.origin.x = CGRectGetMinX(firstIcon.frame) - backgroundMargin_ / 2;
 		frame.origin.y = ([_iconListView iconCenterY]) - (backgroundMargin / 2) - ([_iconListView collapsedIconWidth] / 2);
 
 	} else {
 
-		frame.size.width = [_iconListView collapsedIconWidth] + backgroundMargin;
+		frame.size.width = [_iconListView collapsedIconWidth] + backgroundMargin_;
 		frame.size.height = (CGRectGetMaxY(lastIcon.frame) - CGRectGetMinY(firstIcon.frame)) + backgroundMargin;
-		frame.origin.x = ([_iconListView iconCenterY]) - (backgroundMargin / 2) - ([_iconListView collapsedIconWidth] / 2);
+		frame.origin.x = ([_iconListView iconCenterY]) - (backgroundMargin_ / 2) - ([_iconListView collapsedIconWidth] / 2);
 		frame.origin.y = CGRectGetMinY(firstIcon.frame) - backgroundMargin / 2;
 
 	}
 
-	MSHookIvar<UIView*>(self, "_backgroundView").layer.cornerRadius = 20; //add more cornerRadius
+	MSHookIvar<UIView*>(self, "_backgroundView").layer.cornerRadius = 25; //add more cornerRadius
 	MSHookIvar<UIView*>(self, "_backgroundView").frame = frame;
 
 }
