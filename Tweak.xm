@@ -831,13 +831,16 @@ static UILabel *indicatorLabel;
 	SBDockIconListView *dockListView = [[%c(SBIconController) sharedInstance] dockListView];
 
 	CGRect frame = self.frame;
+	CGRect frame_ = self.frame;
 
 	if (in_landscape) {
 		frame.origin.x += (self.bounds.size.width - [dockListView iconCenterY]) + ([dockListView collapsedIconWidth] / 2) + ([objc_getClass("SBIconBadgeView") _overhang].x * [dockListView collapsedIconScale]);
 	} else {
 		frame.origin.y += (self.bounds.size.height - [dockListView iconCenterY]) + ([dockListView collapsedIconWidth] / 2) + ([objc_getClass("SBIconBadgeView") _overhang].y * [dockListView collapsedIconScale]);
 	}
-
+	frame_.size.height = 100; //may not look good on non-9.7" devices. remove these two lines to fix
+        self.frame = frame_; 
+	
 	[bounceWindow setFrame:frame];
 }
 
