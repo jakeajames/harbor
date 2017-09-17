@@ -116,13 +116,7 @@
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-	if (![[prefs getenabled] boolValue])
-		return %orig(point, event);
-
-	if ([self isInDock])
-		return nil;
-
-	return %orig(point, event);
+	return %orig(point, event); //fixed app tap. however there's an issue in wiggle mode
 }
 
 - (id)initWithContentType:(unsigned long long)arg1 {
