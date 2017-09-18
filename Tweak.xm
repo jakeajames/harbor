@@ -35,6 +35,8 @@
 
 #define icon_animation_duration ([[prefs getanimationDuration] floatValue])
 
+static BOOL didIt = false;
+
 @interface SBRootFolderView ()
 
 - (void)orientationChanged:(NSNotification*)arg1;
@@ -796,6 +798,17 @@ static UILabel *indicatorLabel;
 
 - (void)layoutSubviews {
 	%orig();
+	
+	if(!didIt) {
+	        SBWallpaperEffectView *wall = MSHookIvar<SBWallpaperEffectView*> (self, "_backgroundView");
+		_SBFakeBlurView *blurView = MSHookIvar<_SBFakeBlurView*> (wall, "_blurView");
+		UIView *newView = [[UIView alloc] initWithFrame:CGRectMake(blurView.frame.origin.x, blurView.frame.origin.y, blurView.frame.size.width, blurView.frame.size.height*2)];
+		[newView setBackgroundColor:[UIColor whiteColor]];
+		newView.alpha = 0.25;
+		[blurView addSubview:newView];
+		didIt = true;
+	}
+
 	if (![[prefs getenabled] boolValue])
 		return;
 	if (![[prefs getuseNormalBackground] boolValue]) {
