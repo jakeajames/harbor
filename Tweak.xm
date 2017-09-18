@@ -35,7 +35,7 @@
 
 #define icon_animation_duration ([[prefs getanimationDuration] floatValue])
 
-static BOOL didIt = false;
+//static BOOL didIt = false;
 
 @interface SBRootFolderView ()
 
@@ -434,7 +434,7 @@ static UILabel *indicatorLabel;
 
 	[self layoutIconsIfNeeded:icon_animation_duration domino:false];
 
-	// Update indicator
+	// Update indicicator
 	SBIconView *focusedIcon = nil;
 
 	@try {
@@ -799,7 +799,7 @@ static UILabel *indicatorLabel;
 - (void)layoutSubviews {
 	%orig();
 	
-	if(!didIt) {
+	/*if(!didIt) {
 	        SBWallpaperEffectView *wall = MSHookIvar<SBWallpaperEffectView*> (self, "_backgroundView");
 		_SBFakeBlurView *blurView = MSHookIvar<_SBFakeBlurView*> (wall, "_blurView");
 		UIView *newView = [[UIView alloc] initWithFrame:CGRectMake(blurView.frame.origin.x, blurView.frame.origin.y, blurView.frame.size.width, blurView.frame.size.height*2)];
@@ -807,7 +807,7 @@ static UILabel *indicatorLabel;
 		newView.alpha = 0.25;
 		[blurView addSubview:newView];
 		didIt = true;
-	}
+	}*/
 
 	if (![[prefs getenabled] boolValue])
 		return;
