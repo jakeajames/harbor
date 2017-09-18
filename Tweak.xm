@@ -851,7 +851,7 @@ static UILabel *indicatorLabel;
 	} else {
 		frame.origin.y += (self.bounds.size.height - [dockListView iconCenterY]) + ([dockListView collapsedIconWidth] / 2) + ([objc_getClass("SBIconBadgeView") _overhang].y * [dockListView collapsedIconScale]);
 	}
-	frame_.size.height = 100; //may not look good on non-9.7" devices. remove these two lines to fix
+	frame_.size.height = 85; //may not look good on non-9.7" devices. remove these two lines to fix
         self.frame = frame_; 
 	
 	[bounceWindow setFrame:frame];
@@ -869,8 +869,8 @@ static UILabel *indicatorLabel;
 		lastIcon = [_iconListView.viewMap mappedIconViewForIcon:_iconListView.model.icons[([_iconListView.model.icons count]) - 2]];
 	}
 
-	CGFloat backgroundMargin = 25.0;
-	CGFloat backgroundMargin_ = 35.0;
+	CGFloat backgroundMargin = 28.0;
+	CGFloat backgroundMargin_ = 40.0;
 
 	CGRect frame = CGRectZero;
 
@@ -890,7 +890,7 @@ static UILabel *indicatorLabel;
 
 	}
 
-	MSHookIvar<UIView*>(self, "_backgroundView").layer.cornerRadius = 25; //add more cornerRadius
+	MSHookIvar<UIView*>(self, "_backgroundView").layer.cornerRadius = 31; //add more cornerRadius
 	MSHookIvar<UIView*>(self, "_backgroundView").frame = frame;
 
 }
