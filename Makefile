@@ -1,10 +1,6 @@
-ifdef SIMULATOR
+
 export TARGET = simulator:clang
 export ARCHS = x86_64 i386
-else
-export TARGET = iphone:latest
-export ARCHS = armv7 arm64
-endif
 
 include theos/makefiles/common.mk
 
